@@ -186,11 +186,19 @@ function bubbleSort(a) {
 
 <br>
 
+*Bubble-sort with Hungarian ("Csángó") folk dance*
+
+[![BubbleSort](https://img.youtube.com/vi/lyZQPjUT5B4/0.jpg)]((https://www.youtube.com/watch?v=lyZQPjUT5B4&t=45))
+
+<br>
+
 # Inbyggda funktioner
 
 ## Array.sort()
 
-Ho ho hoppsan! Det finns visst en inbyggd sortering i javascript.
+Ho ho hoppsan! :santa: **Det finns visst inbyggd sortering i javascript!**
+
+Låt oss undersöka hur den fungerar!
 
 Skapa en ny fil `playground.js`.
 
@@ -252,7 +260,7 @@ Varför ska man lära sig sorteringsalgoritmer om de redan finns implementerade?
 
 ## Selection sort
 
-Kolla på [detta klipp](https://www.youtube.com/watch?v=g-PGLbMth_g) som förklarar hur selection sort fungerar.
+Kolla på [detta klipp](https://www.youtube.com/watch?v=g-PGLbMth_g) som förklarar hur selection sort fungerar. Eller ta hjälp av [Select-sort with Gypsy folk dance](https://www.youtube.com/watch?v=Ns4TPTC8whw).
 
 Som du såg i klippet är ett delsteg i denna algoritm **att hitta positionen för det minsta elementet i en del av arrayen**.
 
@@ -295,6 +303,10 @@ Implementera nu funktionen `selectionSort` i `sorting.js`. Använd `findMinIndex
 ## Insertion sort
 
 Kolla på [detta klipp](https://www.youtube.com/watch?v=JU767SDMDvA) som förklarar hur insertion sort fungerar.
+
+*Eller varför inte lite "Insert-sort with Romanian folk dance"?*
+
+[![](https://img.youtube.com/vi/ROalU379l3U/0.jpg)](https://www.youtube.com/watch?v=ROalU379l3U)
 
 Implementera algoritmen i en funktion med namnet `insertionSort`.
 
