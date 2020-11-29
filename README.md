@@ -114,13 +114,18 @@ Innan du fortsätter:
 * Vad returnerar funktionen `swap`?
 * Gör så att funktionen `swap` exporteras, på samma sätt som `randomArray`
 
-### Tillbaka till Bubble sort
+### Tillbaka till Bubble Sort
 
 Öppna nu filen `sorting.js`. 
 
-Importera funktionen `swap` från `helpers.js`
+Importera funktionen `swap` från `helpers.js`, på samma sätt som `randomArray` är importerad.
 
-Implementera Bubble sort. Har du glömt bort hur den fungerar? Se [klippet](https://www.youtube.com/watch?v=xli_FI7CuzA) igen.
+````javascript
+import { randomArray, swap } from './helpers.js'
+// Resten av koden nedanför...
+````
+
+Implementera Bubble Sort! Har du glömt bort hur den fungerar? Se [klippet](https://www.youtube.com/watch?v=xli_FI7CuzA) igen.
 
 <details>
 <summary>Ledtråd 1</summary>
@@ -195,9 +200,18 @@ Använd den inbyggda Array-metoden [Array.sort()](https://developer.mozilla.org/
 
 ## Sortera array av strängar
 
-Skapa en array av strings.
+````javascript
+const storage = [
+    'Bicycle',
+    'Lego',
+    'Doll',
+    'Teddybear',
+    'Crayons',
+    'Fishing rod'
+]
+````
 
-Kan du sortera den arrayen med `Array.sort()`?
+Kan du sortera den här arrayen med `Array.sort()`? Prova!
 
 ## Hur sorterar man en array av objekt?
 
@@ -217,6 +231,8 @@ Om vi t.ex. vill sortera ovanstående på deras `naughtyScore` eller deras `åld
 Vi behöver skicka in en funktion som argument till `Array.sort()`.
 
 Använd webben för att hitta svaret. Prova!
+
+Du är klar när du kan sortera efter barnens namn, ålder och efter hur stygga de varit.
 
 <details>
 <summary>Ledtråd</summary>
