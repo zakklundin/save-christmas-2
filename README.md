@@ -1,4 +1,4 @@
-# Save Christmas part 2. (a.k.a. fler algoritmer) :santa:
+# Save Christmas part 2. (a.k.a. sorteringsalgoritmer) :santa:
 
 Jultomten har bett oss att implementera algoritmer för att sortera arrayer. Han behöver dem för att sortera julklappar, barn, med mera.
 
