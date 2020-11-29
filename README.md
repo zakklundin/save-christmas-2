@@ -112,7 +112,7 @@ Innan du fortsätter:
 
 Den första sorteringsalgoritmen man brukar få lära sig heter **Bubble Sort**.
 
-Kolla på [detta klipp]() som förklarar hur Bubble Sort  fungerar.
+Kolla på [detta klipp](https://www.youtube.com/watch?v=xli_FI7CuzA) som förklarar hur Bubble Sort fungerar.
 
 * Öppna filen `sorting.js`. 
 * Importera funktionen `swap` från `helpers.js`
@@ -173,6 +173,10 @@ function bubbleSort(a) {
 
 <br>
 
+**Idag när du kommer hem, förklara för en förälder / syskon hur bubble sort fungerar.**
+
+<br>
+
 # Inbyggda funktioner
 
 Ho ho hoppsan! Det finns visst en inbyggd sortering i javascript.
@@ -192,15 +196,47 @@ Varför ska man lära sig sorteringsalgoritmer om de redan finns implementerade?
 
 ## Selection sort
 
-Kolla på [detta klipp]() som förklarar hur selection sort fungerar.
+Kolla på [detta klipp](https://www.youtube.com/watch?v=g-PGLbMth_g) som förklarar hur selection sort fungerar.
 
-Skapa en funktion `selectionSort` i `sorting.js` som sorterar en array med hjälp av **Selection Sort**
+Som du såg i klippet är ett delsteg i denna algoritm att hitta det minsta elementet i den osorterade delen. Börja därför med att skriva en funktion som heter `findMinIndex(a, m, n)`. Den ska returnera index för det minsta värdet mellan position m och n för en array.
+
+````javascript
+const arr = [5, 7, 0, 3, -1]
+findMinIndex(arr, 1, 3) // Ger 3 eftersom arr[3] är 0, vilket är minst av a[0], a[1], a[2] och a[3]
+````
+
+<details>
+<summary>Lösning</summary>
+
+````javascript
+function findMinIndex(a, m, n) {
+    let minIndex = m
+    for (let i = m; i < n + 1; i++) {
+        if (a[i] < a[minIndex]) {
+            minIndex = i
+        }        
+    }
+    return minIndex
+}
+````
+</details>
+
+Skapa en funktion `selectionSort` i `sorting.js` som sorterar en array med hjälp av **Selection Sort**. Använd `findMinIndex` som du skapat ovan.
+
+
+<br>
+
+**Idag när du kommer hem, förklara för en förälder / syskon hur selection sort fungerar.**
+
+<br>
 
 ## Insertion sort
 
-Kolla på [detta klipp]() som förklarar hur insertion sort fungerar.
+Kolla på [detta klipp](https://www.youtube.com/watch?v=JU767SDMDvA) som förklarar hur insertion sort fungerar.
 
-Implementera i en funktion med namnet `insertionSort`.
+Implementera algoritmen i en funktion med namnet `insertionSort`.
+
+**Idag när du kommer hem, förklara för en förälder / syskon hur insertion sort fungerar.**
 
 ## Vilken sorteringsalgoritm är bäst?
 
