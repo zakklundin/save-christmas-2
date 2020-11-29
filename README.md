@@ -8,13 +8,17 @@ Kolla igenom filen `helpers.js`. Där ser du två stycken funktioner varav den e
 
 Innan du fortsätter:
 * Vad heter funktionen i `helpers.js` som exporteras?
-* Vad gör den?
+* Vad gör den? Läs rad för rad.
 
-## Algoritm 1. Byta plats på två element
+## Bubble sort
 
-Hur byter vi plats på två element i en array?
+Den första sorteringsalgoritmen heter **Bubble Sort**.
 
-Vad blir resultatet av dessa rader? Vad blir fel?
+Kolla på [detta klipp](https://www.youtube.com/watch?v=xli_FI7CuzA). Förstår du vad som händer?
+
+Som du ser behöver vi kunna **byta plats på två element i en array**. Hur gör man det?
+
+Varför fungerar inte det här?
 ````javascript
 // a är en array
 a[3] = a[5]
@@ -24,12 +28,12 @@ a[5] = a[3]
 <details>
 <summary>Svar</summary>
 
-Båda elementen kommer ha värdet `a[5]`.
-
-Värdet av `a[3]` tappas bort.
-</details>
-
-Vi tänker alltså fel, det här fungerar inte. 
+````javascript
+// Vi skriver över a[3] med a[5]
+// Värdet av a[3] tappas bort
+// Båda elementen blir därför a[5]
+````
+</details> 
 
 Vad ska vi åtgärda?
 <details>
@@ -47,7 +51,9 @@ a[5] = temp
 Ser du hur det fungerar?
 </details>
 
-### Swap
+<br>
+
+### Swap :arrows_counterclockwise:
 
 Implementera nu en funktion med namnet `swap` i filen `helpers.js`, som byter plats på två godtyckliga element i en array.
 
@@ -108,15 +114,13 @@ Innan du fortsätter:
 * Vad returnerar funktionen `swap`?
 * Gör så att funktionen `swap` exporteras, på samma sätt som `randomArray`
 
-## Algoritm 2. Bubble sort
+### Tillbaka till Bubble sort
 
-Den första sorteringsalgoritmen man brukar få lära sig heter **Bubble Sort**.
+Öppna nu filen `sorting.js`. 
 
-Kolla på [detta klipp](https://www.youtube.com/watch?v=xli_FI7CuzA) som förklarar hur Bubble Sort fungerar.
+Importera funktionen `swap` från `helpers.js`
 
-* Öppna filen `sorting.js`. 
-* Importera funktionen `swap` från `helpers.js`
-* Implementera Bubble Sort
+Implementera Bubble sort. Har du glömt bort hur den fungerar? Se [klippet](https://www.youtube.com/watch?v=xli_FI7CuzA) igen.
 
 <details>
 <summary>Ledtråd 1</summary>
@@ -130,7 +134,7 @@ Kolla på [detta klipp](https://www.youtube.com/watch?v=xli_FI7CuzA) som förkla
 <details>
 <summary>Ledtråd 2</summary>
 
-Du behöver en loop som ligger i en annan loop.
+Du behöver en loop som ligger i en annan loop. På engelska säger man *nested* loops.
 </details>
 <details>
 <summary>Ledtråd 3 (lösning)</summary>
@@ -173,11 +177,13 @@ function bubbleSort(a) {
 
 <br>
 
-**Idag när du kommer hem, förklara för en förälder / syskon hur bubble sort fungerar.**
+**När du kommer hem idag, förklara för en förälder eller ett syskon hur bubble sort fungerar.**
 
 <br>
 
 # Inbyggda funktioner
+
+## Array.sort()
 
 Ho ho hoppsan! Det finns visst en inbyggd sortering i javascript.
 
@@ -186,6 +192,40 @@ Skapa en ny fil `playground.js`.
 Importera funktionen `randomArray` från `helpers.js` och skapa en ny array av längd 100.
 
 Använd den inbyggda Array-metoden [Array.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) för att sortera arrayen.
+
+## Sortera array av strängar
+
+Skapa en array av strings.
+
+Kan du sortera den arrayen med `Array.sort()`?
+
+## Hur sorterar man en array av objekt?
+
+````javascript
+const kids = [
+    { name: 'Elias', age: 11, naughtyScore: 2, wish: 'Bicycle' },
+    { name: 'Lotta', age: 9, naughtyScore: 7, wish: 'Hamster' },
+    { name: 'Kim', age: 9, naughtyScore: 2, wish: 'Lego' },
+    { name: 'José', age: 12, naughtyScore: 9, wish: 'Snowboard' },
+    { name: 'Alexandra', age: 12, naughtyScore: 6, wish: 'Survival kit' },
+    { name: 'Lisa', age: 10, naughtyScore: 4, wish: 'Lego' }
+]
+````
+
+Om vi t.ex. vill sortera ovanstående på deras `naughtyScore` eller deras `ålder`, hur gör vi då?
+
+Vi behöver skicka in en funktion som argument till `Array.sort()`.
+
+Använd webben för att hitta svaret. Prova!
+
+<details>
+<summary>Ledtråd</summary>
+
+Googla på *sort array of objects in javascript*
+
+</details>
+
+<br>
 
 # Fördjupning
 
@@ -198,8 +238,11 @@ Varför ska man lära sig sorteringsalgoritmer om de redan finns implementerade?
 
 Kolla på [detta klipp](https://www.youtube.com/watch?v=g-PGLbMth_g) som förklarar hur selection sort fungerar.
 
-Som du såg i klippet är ett delsteg i denna algoritm att hitta det minsta elementet i den osorterade delen. Börja därför med att skriva en funktion som heter `findMinIndex(a, m, n)`. Den ska returnera index för det minsta värdet mellan position m och n för en array.
+Som du såg i klippet är ett delsteg i denna algoritm **att hitta positionen för det minsta elementet i en del av arrayen**.
 
+Börja därför med att implementera en funktion som heter `findMinIndex(a, m, n)`. Den ska returnera index för det minsta värdet mellan position m och n för en array.
+
+Exempel:
 ````javascript
 const arr = [5, 7, 0, 3, -1]
 findMinIndex(arr, 1, 3) // Ger 3 eftersom arr[3] är 0, vilket är minst av a[0], a[1], a[2] och a[3]
@@ -221,12 +264,15 @@ function findMinIndex(a, m, n) {
 ````
 </details>
 
-Skapa en funktion `selectionSort` i `sorting.js` som sorterar en array med hjälp av **Selection Sort**. Använd `findMinIndex` som du skapat ovan.
+<br>
 
+Klar? 
+
+Implementera nu funktionen `selectionSort` i `sorting.js`. Använd `findMinIndex` som du skapade ovan.
 
 <br>
 
-**Idag när du kommer hem, förklara för en förälder / syskon hur selection sort fungerar.**
+**När du kommer hem idag, förklara för en förälder eller ett syskon hur selection sort fungerar.**
 
 <br>
 
@@ -236,7 +282,7 @@ Kolla på [detta klipp](https://www.youtube.com/watch?v=JU767SDMDvA) som förkla
 
 Implementera algoritmen i en funktion med namnet `insertionSort`.
 
-**Idag när du kommer hem, förklara för en förälder / syskon hur insertion sort fungerar.**
+**När du kommer hem idag, förklara för en förälder eller ett syskon hur insertion sort fungerar.**
 
 ## Vilken sorteringsalgoritm är bäst?
 
